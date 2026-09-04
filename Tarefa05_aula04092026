@@ -1,0 +1,4 @@
+--1) criaturas
+SELECT * FROM `creature_template` WHERE name LIKE '%Spider%' order by name;
+
+2) SELECT * FROM `game_event` WHERE name LIKE '%Spider%' order by name;
