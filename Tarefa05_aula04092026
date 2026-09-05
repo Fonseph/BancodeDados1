@@ -1,9 +1,25 @@
 --1) criaturas
 SELECT * FROM `creature_template` WHERE name LIKE '%Spider%' order by name;
 
---2)
+--2)  Evento – Love is in the Air
 --passo 1 
 SELECT * FROM `game_event`; 
 --passo 2 
 
 SELECT * FROM `game_event` WHERE description LIKE '%Love is in the Air%';
+
+--3)Loot – Murloc Tidehunter
+--passo 1 
+SELECT * FROM `creature_template` where name like '%Murloc Tidehunter%';
+--passo 2 
+SELECT * FROM `creature_loot_template`
+--passo 3 
+SELECT * FROM `creature_loot_template` where entry like'%127%'
+
+--4) Experiência
+-- passo 1 
+SELECT * FROM `exploration_basexp`
+-passo 2 
+SELECT * FROM `exploration_basexp` WHERE level = 10;-- resultado: 85
+
+
