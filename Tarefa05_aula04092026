@@ -61,7 +61,7 @@ SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Wow_db' A
 SELECT * FROM item_template;
 
 -- passo 3
-SELECT entry, name, InventoryType FROM item_template WHERE InventoryType = 1 OR InventoryType = 5 OR InventoryType = 7 OR InventoryType = 10;
+SELECT name, InventoryType FROM item_template WHERE InventoryType = 1 OR InventoryType = 5 OR InventoryType = 7 OR InventoryType = 10;
 
 -- 8) Pontos de interesse – Dalaran
 -- passo 1
