@@ -23,3 +23,59 @@ SELECT * FROM `exploration_basexp`
 SELECT * FROM `exploration_basexp` WHERE level = 10;-- resultado: 85
 
 -- 5) Quest – Kobold Camp Cleanup
+--agora rodando o db em casa com nome wow_db
+--passo 1 
+ SELECT * FROM `quest_template`
+--passo 2
+--pesquisei o id referente Kobold Camp Cleanup , verifiquei que era = 7 
+SELECT * FROM quest_template WHERE ID = 7;
+--passo 3
+SELECT QuestLevel, QuestDescription FROM quest_template WHERE ID = 7;
+
+--6) Conjunto – Crystalforge
+--passo 1 
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Wow_db' AND TABLE_NAME LIKE '%item%';
+--passo 2
+SELECT * FROM `item_template`
+--passo 3
+SELECT * FROM item_template WHERE entry = 30123;
+--passo 4
+SELECT entry, name, ItemSet FROM item_template WHERE entry = 30123;
+--passo 5 
+SELECT entry, name, ItemSet FROM item_template WHERE ItemSet = 552;
+
+--7) Tipo de equipamento
+--passo 1
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Wow_db' AND TABLE_NAME LIKE '%item%';
+--passo 2
+SELECT * FROM item_template;
+--passo 3
+SELECT entry, name, InventoryType FROM item_template WHERE InventoryType = 1 OR InventoryType = 5 OR InventoryType = 7 OR InventoryType = 10;
+
+--8)  Pontos de interesse – Dalaran
+--passo 1
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Wow_db' AND TABLE_NAME LIKE '%point%';
+--passo 2
+SELECT * FROM points_of_interest;
+--passo 3
+SELECT entry, name, x, y FROM points_of_interest WHERE name LIKE '%Dalaran%';
+
+--9) Clima – Região de Wetlands
+--passo 1
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Wow_db' AND TABLE_NAME LIKE '%weather%';
+--passo 2
+SELECT * FROM game_weather;
+--passo 3
+SELECT * FROM game_weather WHERE zone = 11;
+--passo 4
+SELECT zone FROM game_weather WHERE spring_rain_chance = 25 AND summer_rain_chance = 15 AND fall_rain_chance = 25 AND winter_rain_chance = 25 AND zone <> 11;
+
+--10)Pontos de vida – Mage
+--passo 1
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Wow_DB' AND TABLE_NAME LIKE '%class%level%';
+--passo 2
+SELECT * FROM player_classlevelstats;
+--passo 3 - ID Mage = 8
+SELECT class, level, basehp FROM player_classlevelstats WHERE class = 8 AND level = 80;
+
+
